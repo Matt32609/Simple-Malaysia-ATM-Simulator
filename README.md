@@ -37,7 +37,8 @@ To use this simulator:
 ----------------------------------------------------------------------------------
 - Default PIN number : 123456
 - Default balance : RM1000.00
-(the balance and pin number is able to change throughout the session)
+
+(The balance and PIN can be changed throughout the session.)
 
 To run the simulator:
 ----------------------------------------------------------------------------------
