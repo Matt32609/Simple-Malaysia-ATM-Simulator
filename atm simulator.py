@@ -100,7 +100,7 @@ def atm_menu():
                 print("Sorry , this was an invalid response . Please try again.")
                 return 
         elif selection == 3:
-            original_pin = int(input("Enter your original pin number . If you wish to return to the main menu , type the wrong pin number once and you will be returned to the menu. "))
+            original_pin = int(input("Enter your original pin number . If you wish to return to the main menu , type any number or letter once and you will be returned to the menu. "))
             if original_pin == pin:
                 new_pin = int(input("Please enter your desired new pin number: "))
                 confirm_pin = int(input("Please reenter your desired new pin number for verification."))
@@ -131,7 +131,13 @@ def atm_menu():
                 print("Thank you for using this ATM.")
                 exit()
         elif selection == 5:
-            dep = float(input("How much would you like to deposit? If you wish to return to the main menu , type a letter once and you will be returned to the menu."))
+            akaun = int(input("Please enter your account number , If you wish to return to the main menu , type any number or letter once and you will be returned to the menu.:"))
+            nas = 1234567890
+            if akaun == nas:
+                print("Account number verified.")
+            else:
+                return
+            dep = float(input("How much would you like to deposit? "))
             if dep > 0 and round(dep * 100) % 5 == 0:
                 balance = round(balance + dep, 2)
                 print(f"Success! RM{dep} has been added to your account.")
