@@ -1,5 +1,7 @@
 # Malaysia-ATM-Simulator
-This project is to simulate the ATM machine in Python . The currency will be in MYR (Malaysian ringgit) . This project was made to serve as a step up in my programming skill with the usage of "global" variable and serve as an application for my past 4 projects.
+A command-line ATM simulator built in Python that mimics real Malaysian banking interactions such as withdrawals, deposits, and PIN authentication.
+
+This project was created to strengthen my understanding of Python concepts including input validation, error handling, global variables, and clean program structure.
 
 Key features of the code:
 ------------------------------------------------------------------------------------
@@ -48,5 +50,16 @@ Example of images:
 
 
 <img width="562" height="338" alt="MINGW64__c_Users_Matthew Kam_Desktop_R 18_03_2026 12_08_35" src="https://github.com/user-attachments/assets/4c2299d4-a689-4977-a230-fc545449138f" />
+
+
+What I learnt throughout the project:
+------------------------------------------------------------------------------
+- Handling user input and edge cases
+
+- Structuring Python applications logically
+
+- Implementing basic security features
+
+- Using dictionaries for cleaner code design
 
 
