@@ -59,6 +59,7 @@ def atm_menu():
                     if abcde == 1:
                         return
                     elif abcde == 2:
+                        print("Thank you for using this ATM.")
                         exit()
                     else:
                         print("Sorry , this was an invalid response . Please try again.")
@@ -75,6 +76,7 @@ def atm_menu():
                     if abcde == 1:
                         return
                     elif abcde == 2:
+                        print("Thank you for using this ATM.")
                         exit()
                 else:
                     print("Invalid amount. You cannot withdraw RM0 , negative amount , unrealistic amounts , amounts exceeding your balance or with excessive decimals.")
@@ -92,6 +94,7 @@ def atm_menu():
             if balance_select == 1:
                 return
             elif balance_select == 2:
+                print("Thank you for using this ATM.")
                 exit()
             else:
                 print("Sorry , this was an invalid response . Please try again.")
@@ -108,6 +111,7 @@ def atm_menu():
                     if caa == 1:
                         return
                     elif caa == 2:
+                        print("Thank you for using this ATM.")
                         exit()
                 else:
                     print("Sorry , the verification of the new pin number failed , the pin number will not be changed . Please try again.")
@@ -124,6 +128,7 @@ def atm_menu():
             if fffff == 1:
                 return
             else:
+                print("Thank you for using this ATM.")
                 exit()
         elif selection == 5:
             dep = float(input("How much would you like to deposit? If you wish to return to the main menu , type a letter once and you will be returned to the menu."))
@@ -134,6 +139,7 @@ def atm_menu():
                 print("(1) Yes | (2) No")
                 cont = int(input("Would you like to continue the transaction? "))
                 if cont == 2:
+                    print("Thank you for using this ATM.")
                     exit()
             else:
                 print("Invalid amount. You cannot deposit RM0 , negative amounts , unrealistic amounts or amounts that contains excessive decimals.")
