@@ -33,6 +33,9 @@ Key features of the code:
 7. Efficient Input Selection:
 - Instead of using long chains of if/else statements for the withdrawal selection menu , I implemented Python Dictionaries to map menu numbers directly to RM values.
 
+8. Strict PIN Validation:
+- I implemented dual-layer validation using .isdigit() and len() to ensure new PINs consist strictly of numbers and meet the 4-6 digit security standard, preventing system crashes and invalid data entries.
+
 To use this simulator:
 ----------------------------------------------------------------------------------
 - Default PIN number : 123456
