@@ -5,7 +5,7 @@ balance = 1000.00
 
 def pin_page():
     try:
-        typing = int(input("Hello , please enter your pin number."))
+        typing = int(input("Hello , please enter your PIN."))
         if typing == pin:
             print("Accepted , onto the main menu now.")
             return True
@@ -42,12 +42,12 @@ def atm_menu():
         print("(4) --- Factory reset (SPECIAL FOR THIS ATM SIMULATOR ONLY)")
         print("(5) --- Deposit")
         print("(6) --- Exit")
-        selection = int(input("Please type either 1 , 2 , 3 , 4 , 5 or 6 to continue."))
+        selection = int(input("Please enter a digit either 1 , 2 , 3 , 4 , 5 or 6 to continue."))
         if selection == 1:
             print("Please select an amount to continue.")
             print("(1) RM100 | (2) RM400 | (3) RM800 | (4) RM1100")
             print("(5) RM1400 | (6) RM1700 | (7) Other amount | (8) Main menu")
-            one_input = int(input("Please type either 1 , 2 , 3 , 4 , 5 , 6 , 7 or 8 to continue."))
+            one_input = int(input("Please enter a digit either 1 , 2 , 3 , 4 , 5 , 6 , 7 or 8 to continue."))
             amounts = {1: 100, 2: 400, 3: 800, 4: 1100, 5: 1400, 6: 1700}
             if one_input in amounts:
                 cash = amounts[one_input] 
@@ -55,7 +55,7 @@ def atm_menu():
                     balance = round(balance - cash, 2)
                     print("Transaction successful!")
                     print("(1) Yes | (2) No")
-                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please type either 1 or 2 to continue."))
+                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please enter a digit either 1 or 2 to continue."))
                     if abcde == 1:
                         return
                     elif abcde == 2:
@@ -67,12 +67,12 @@ def atm_menu():
                 else:
                     print(f"Insufficient funds! You only have RM{balance:.2f}.")
             elif one_input == 7:
-                oa = float(input("Please type your amount: "))
+                oa = float(input("Please enter your desired amount: "))
                 if 0 < oa <= balance and round(oa * 100) % 5 == 0:
                     balance = round(balance - oa, 2)
                     print("Transaction successful!")
                     print("(1) Yes | (2) No")
-                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please type either 1 or 2 to continue."))
+                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please enter a digit either 1 or 2 to continue."))
                     if abcde == 1:
                         return
                     elif abcde == 2:
@@ -90,7 +90,7 @@ def atm_menu():
             print(f"Your balance is RM{balance:.2f} . Would you like to continue?")
             print("(1) --- Yes")
             print("(2) --- No")
-            balance_select = int(input("Please type either 1 or 2 to continue."))
+            balance_select = int(input("Please enter a digit either 1 or 2 to continue."))
             if balance_select == 1:
                 return
             elif balance_select == 2:
@@ -100,16 +100,16 @@ def atm_menu():
                 print("Sorry , this was an invalid response . Please try again.")
                 return 
         elif selection == 3:
-            original_pin = int(input("Enter your original pin number . If you wish to return to the main menu , type any number or letter once and you will be returned to the menu. "))
+            original_pin = int(input("Enter your original PIN  . If you wish to return to the main menu , enter any number or letter once and you will be returned to the menu. "))
             if original_pin == pin:
-                new_pin_input = input("Please enter your desired new pin number (4-6 digits).: ")
+                new_pin_input = input("Please enter your desired new PIN (4-6 digits).: ")
                 if new_pin_input.isdigit() and 4 <= len(new_pin_input) <= 6:
                     new_pin = int(new_pin_input)
-                    confirm_pin = int(input("Please reenter your desired new pin number for verification."))
+                    confirm_pin = int(input("Please reenter your desired new PIN for verification."))
                     if new_pin == confirm_pin:
                         pin = new_pin
                         print("(1) Yes | (2) No")
-                        caa = int(input("Your pin number has been changed . Would you like to continue the transaction? Please type either 1 or 2 to continue."))
+                        caa = int(input("Your PIN has been changed . Would you like to continue the transaction? Please enter either 1 or 2 to continue."))
                         if caa == 1:
                             return
                         elif caa == 2:
@@ -128,14 +128,14 @@ def atm_menu():
             pin = 123456
             print("System fully reset.")
             print("(1) Yes | (2) No")
-            fffff = int(input("Would you like to try the simulator again? Please type either 1 or 2 to continue."))
+            fffff = int(input("Would you like to try the simulator again? Please enter a digit either 1 or 2 to continue."))
             if fffff == 1:
                 return
             else:
                 print("Thank you for using this ATM.")
                 exit()
         elif selection == 5:
-            akaun = int(input("Please enter your account number , If you wish to return to the main menu , type any number or letter once and you will be returned to the menu.:"))
+            akaun = int(input("Please enter your account number , If you wish to return to the main menu , enter any number or letter once and you will be returned to the menu.:"))
             nas = 1234567890
             if akaun == nas:
                 print("Account number verified.")
