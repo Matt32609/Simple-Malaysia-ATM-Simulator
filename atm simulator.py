@@ -41,7 +41,7 @@ def atm_menu():
         print("(3) --- Change your pin number")
         print("(4) --- Factory reset (SPECIAL FOR THIS ATM SIMULATOR ONLY)")
         print("(5) --- Deposit")
-        print("(6) --- Exit")
+        print("(6) --- Return card")
         selection = int(input("Please enter a digit either 1 , 2 , 3 , 4 , 5 or 6 to continue."))
         if selection == 1:
             print("Please select an amount to continue.")
