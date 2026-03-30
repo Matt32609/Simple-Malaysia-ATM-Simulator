@@ -54,8 +54,9 @@ To run the simulator:
 Example of images:
 -----------------------------------------------------------------------------------
 
+<img width="562" height="380" alt="MINGW64__c_Users_Matthew Kam_Desktop_R 30_03_2026 17_34_30" src="https://github.com/user-attachments/assets/e3f9567d-c89c-4566-87ab-1a4d34be9a74" />
 
-<img width="562" height="338" alt="MINGW64__c_Users_Matthew Kam_Desktop_R 30_03_2026 11_05_37" src="https://github.com/user-attachments/assets/c10467e8-683e-43b0-a949-5bdbe5b34ae5" />
+
 
 
 
