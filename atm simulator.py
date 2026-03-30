@@ -7,7 +7,6 @@ def pin_page():
     try:
         typing = int(input("Hello , please enter your PIN."))
         if typing == pin:
-            print("Accepted , onto the main menu now.")
             return True
         elif typing != pin:
             print("Sorry , please try again.")
