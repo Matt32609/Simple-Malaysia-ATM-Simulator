@@ -36,6 +36,12 @@ Key features of the code:
 8. Strict PIN Validation:
 - I implemented dual-layer validation using .isdigit() and len() to ensure new PINs consist strictly of numbers and meet the 4-6 digit security standard, preventing system crashes and invalid data entries.
 
+9. Centralized Navigation Control:
+- Instead of repeating the same "continue" question in every menu after a successful transaction , I moved it into its own dedicated function called "ask_to_exit()" . This allows the program to jump to that logic from any transaction and return, making the code much cleaner and easier to manage.
+
+10. Smart Cash Accumulation:
+- I used a while loop and the "continue" command in the deposit section so the machine remembers the previous amounts inserted. This allows a user to keep adding cash (e.g., RM123 + RM123) to reach a total of RM246 before finalizing the deposit transaction.
+
 To use this simulator:
 ----------------------------------------------------------------------------------
 - Default PIN number : 123456
