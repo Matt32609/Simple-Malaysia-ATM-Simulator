@@ -16,7 +16,6 @@ def pin_page():
         return False
 
 attempts = 0 
-
 while attempts < 3:
     success = pin_page()
     if success:
@@ -141,19 +140,35 @@ def atm_menu():
             else:
                 print("Wrong account number.")
                 return
-            dep = float(input("Enter the amount you would like to deposit."))
-            if dep > 0 and round(dep * 100) % 5 == 0:
-                balance = round(balance + dep, 2)
-                print(f"Success! RM{dep} has been added to your account.")
-                print(f"New balance: RM{balance:.2f}")
-                print("(1) Yes | (2) No")
-                cont = int(input("Would you like to continue the transaction? "))
-                if cont == 2:
-                    print("Thank you for using this ATM.")
-                    exit()
-            else:
-                print("Invalid amount. You cannot deposit RM0 , negative amounts , unrealistic amounts or amounts that contains excessive decimals.")
-                return
+
+            running_total = 0.0
+            while True:
+                dep = float(input("Enter the amount you would like to deposit."))
+                if dep > 0 and round(dep * 100) % 5 == 0:
+                    running_total = round(running_total + dep, 2)
+                    print(f"Your intended deposit amount is : RM{running_total:.2f} . Would you like to proceed?")
+                    print("(1) Add amount | (2) Yes | (3) No")
+                    option = int(input("Please enter a digit either 1 , 2 or 3 to continue."))
+                    if option == 1:
+                        continue
+                    elif option == 2:
+                        balance = round(balance + running_total, 2)
+                        print(f"Transaction successful! RM{running_total:.2f} has been deposited into your account.")
+                        print(f"New balance: RM{balance:.2f}")
+                        print("(1) Yes | (2) No")
+                        cont = int(input("Would you like to continue the transaction? "))
+                        if cont == 1:
+                            return
+                        elif cont == 2:
+                            print("Thank you for using this ATM.")
+                            exit()
+                    elif option == 3:
+                        print(f"Your deposited amount of RM{running_total:.2f} has been returned.")
+                        return
+                else:
+                    print("Invalid amount. You cannot deposit RM0 , negative amounts , unrealistic amounts or amounts that contains excessive decimals.")
+                    return
+                    
         elif selection == 6:
             print("Thank you for using this ATM.")
             exit()
