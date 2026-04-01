@@ -91,7 +91,7 @@ def atm_menu():
         elif selection == 3:
             original_pin = int(input("Enter your original PIN  . If you wish to return to the main menu , enter any number or letter once and you will be returned to the menu. "))
             if original_pin == pin:
-                new_pin_input = input("Please enter your desired new PIN (4-6 digits).: ")
+                new_pin_input = input("Please enter your desired new PIN (4-6 digits). ")
                 if new_pin_input.isdigit() and 4 <= len(new_pin_input) <= 6:
                     new_pin = int(new_pin_input)
                     confirm_pin = int(input("Please reenter your desired new PIN for verification."))
@@ -103,7 +103,7 @@ def atm_menu():
                         print("Sorry , the verification of the new pin number failed , the pin number will not be changed . Please try again.")
                         return
                 else:
-                    print("The number of digits was not sufficient . Please try again.") 
+                    print("The number of digits was insufficient or excessive . Please try again.") 
             else:
                 print("Incorrect pin number.")
                 return 
