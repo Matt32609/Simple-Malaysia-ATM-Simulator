@@ -8,36 +8,45 @@ Key features of the code:
 
 1. Secure Authentication: 
 - A PIN-based login system that tracks login attempts. If the user enters the wrong PIN 3 times, the account is locked and the program exits.
+
  
 
 2. Account Management:
 - The simulator includes a "Change PIN" feature that requires the original PIN for verification and verifies the new PIN before saving.
 
 
+
 3. Simulator Tools:
 - A unique "Factory Reset" option  that restores the default balance and PIN instantly.
+
 
 
 4. Graceful Error Handling:
 - Instead of letting the program crash with errors , I used try-except blocks to catch mistakes and provide helpful, human-readable instructions on how to fix them.
 
 
+
 5. Currency denomination adjustments:
 - I used formatted outputs like (RM{balance:.2f}) to ensure currency always looks professional and realistic, mirroring a real Malaysian ATM screen.
+
 
 
 6. Smart Validation:
 - I implemented mathematical checks such as (round(oa * 100) % 5 == 0) to ensure users only interact with valid Malaysian currency denominations, preventing unrealistic transactions.
 
 
+
 7. Efficient Input Selection:
 - Instead of using long chains of if/else statements for the withdrawal selection menu , I implemented Python Dictionaries to map menu numbers directly to RM values.
+
 
 8. Strict PIN Validation:
 - I implemented dual-layer validation using .isdigit() and len() to ensure new PINs consist strictly of numbers and meet the 4-6 digit security standard, preventing system crashes and invalid data entries.
 
+
 9. Centralized Navigation Control:
 - Instead of repeating the same "continue" question in every menu after a successful transaction , I moved it into its own dedicated function called "ask_to_exit()" . This allows the program to jump to that logic from any transaction and return, making the code much cleaner and easier to manage.
+
 
 10. Smart Cash Accumulation:
 - I used a while loop and the "continue" command in the deposit section so the machine remembers the previous amounts inserted. This allows a user to keep adding cash (e.g., RM123 + RM123) to reach a total of RM246 before finalizing the deposit transaction.
