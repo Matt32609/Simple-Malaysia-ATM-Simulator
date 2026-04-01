@@ -3,6 +3,22 @@
 pin = 123456
 balance = 1000.00
 
+def ask_to_exit():
+    try:
+        print("(1) Yes | (2) No")
+        abcde = int(input("Would you like to continue the transaction? Please enter a digit either 1 or 2 to continue."))
+        if abcde == 1:
+            return True
+        elif abcde == 2:
+            print("Thank you for using this ATM.")
+            exit()
+        else:
+            print("Sorry , this was an invalid response . Please try again.")
+            return 
+    except ValueError:
+        print("Sorry , this was an invalid response . Please try again.")
+        return 
+
 def pin_page():
     try:
         typing = int(input("Hello , please enter your PIN."))
@@ -51,31 +67,16 @@ def atm_menu():
                 cash = amounts[one_input] 
                 if cash <= balance:
                     balance = round(balance - cash, 2)
-                    print("Transaction successful!")
-                    print("(1) Yes | (2) No")
-                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please enter a digit either 1 or 2 to continue."))
-                    if abcde == 1:
-                        return
-                    elif abcde == 2:
-                        print("Thank you for using this ATM.")
-                        exit()
-                    else:
-                        print("Sorry , this was an invalid response . Please try again.")
-                        return 
+                    print(f"Transaction successful! Your current balance is RM{balance:.2f} ")
+                    ask_to_exit()
                 else:
                     print(f"Insufficient funds! You only have RM{balance:.2f}.")
             elif one_input == 7:
                 oa = float(input("Please enter your desired amount: "))
                 if 0 < oa <= balance and round(oa * 100) % 5 == 0:
                     balance = round(balance - oa, 2)
-                    print("Transaction successful!")
-                    print("(1) Yes | (2) No")
-                    abcde = int(input(f"Your current balance is RM{balance:.2f} . Would you like to continue the transaction? Please enter a digit either 1 or 2 to continue."))
-                    if abcde == 1:
-                        return
-                    elif abcde == 2:
-                        print("Thank you for using this ATM.")
-                        exit()
+                    print(f"Transaction successful! Your current balance is RM{balance:.2f}")
+                    ask_to_exit()
                 else:
                     print("Invalid amount. You cannot withdraw RM0 , negative amount , unrealistic amounts , amounts exceeding your balance or with excessive decimals.")
                     return 
@@ -85,18 +86,8 @@ def atm_menu():
                 print("Invalid response.")
                 return  
         elif selection == 2:
-            print(f"Your balance is RM{balance:.2f} . Would you like to continue?")
-            print("(1) --- Yes")
-            print("(2) --- No")
-            balance_select = int(input("Please enter a digit either 1 or 2 to continue."))
-            if balance_select == 1:
-                return
-            elif balance_select == 2:
-                print("Thank you for using this ATM.")
-                exit()
-            else:
-                print("Sorry , this was an invalid response . Please try again.")
-                return 
+            print(f"Your balance is RM{balance:.2f}")
+            ask_to_exit()
         elif selection == 3:
             original_pin = int(input("Enter your original PIN  . If you wish to return to the main menu , enter any number or letter once and you will be returned to the menu. "))
             if original_pin == pin:
@@ -106,13 +97,8 @@ def atm_menu():
                     confirm_pin = int(input("Please reenter your desired new PIN for verification."))
                     if new_pin == confirm_pin:
                         pin = new_pin
-                        print("(1) Yes | (2) No")
-                        caa = int(input("Your PIN has been changed . Would you like to continue the transaction? Please enter either 1 or 2 to continue."))
-                        if caa == 1:
-                            return
-                        elif caa == 2:
-                            print("Thank you for using this ATM.")
-                            exit()
+                        print("Your PIN has been changed successfully.")
+                        ask_to_exit()
                     else:
                         print("Sorry , the verification of the new pin number failed , the pin number will not be changed . Please try again.")
                         return
@@ -155,13 +141,8 @@ def atm_menu():
                         balance = round(balance + running_total, 2)
                         print(f"Transaction successful! RM{running_total:.2f} has been deposited into your account.")
                         print(f"New balance: RM{balance:.2f}")
-                        print("(1) Yes | (2) No")
-                        cont = int(input("Would you like to continue the transaction? "))
-                        if cont == 1:
-                            return
-                        elif cont == 2:
-                            print("Thank you for using this ATM.")
-                            exit()
+                        ask_to_exit()
+                        return
                     elif option == 3:
                         print(f"Your deposited amount of RM{running_total:.2f} has been returned.")
                         return
@@ -177,6 +158,10 @@ def atm_menu():
         return 
 while True:
     atm_menu()
+
+
+
+
 
 
 
