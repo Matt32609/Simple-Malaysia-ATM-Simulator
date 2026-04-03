@@ -42,7 +42,7 @@ while attempts < 3:
         if remaining > 0:
             print(f"You have {remaining} attempts remaining.")
         else:
-            print("TOO MANY INCORRECT ATTEMPTS. ACCOUNT LOCKED.")
+            print("Your account has been locked . Please seek your bank for assistance.")
             exit() 
 
 def atm_menu():
