@@ -51,6 +51,9 @@ Key features of the code:
 10. Smart Cash Accumulation:
 - I used a while loop and the "continue" command in the deposit section so the machine remembers the previous amounts inserted. This allows a user to keep adding cash (e.g., RM123 + RM123) to reach a total of RM246 before finalizing the deposit transaction.
 
+11.Persistent Data Storage: (NEW ADDITION)
+- The simulator utilizes a JSON file system to ensure data persistence. By saving the balance and PIN to an external file, the program retains all account changes even after it is closed, rather than reverting to default values upon every restart.
+
 To use this simulator:
 ----------------------------------------------------------------------------------
 - Default PIN number : 123456
